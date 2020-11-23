@@ -32,10 +32,6 @@ func NewRepository(dialect string, dsn string, idleConn int, maxConn int) (repo.
 	return &repository{db}, nil
 }
 
-func (r *repository) Close() {
-	r.db.Close()
-}
-
 func (r *repository) FindByID(id string) (*model.UserModel, error) {
 	user := new(model.UserModel)
 
